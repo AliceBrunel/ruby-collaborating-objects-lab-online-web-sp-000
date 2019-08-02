@@ -8,7 +8,7 @@ class MP3Importer
   end
   
   def files
-   @path << 
+   @files = Dir.glob("#{@path}/*.mp3").collect{ |file| file.gsub("#{@path}/", "") }
   end
 
   def import(list_of_filenames)
